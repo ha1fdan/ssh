@@ -3,7 +3,7 @@ if [ "$(id -u)" -ne 0 ]; then
     echo "This script must be run as root."
     exit 1
 fi
-SSH_KEY=$(curl -s "https://raw.githubusercontent.com/HalfdanDK/ssh/master/id_rsa")
+SSH_KEY=$(curl -s "https://raw.githubusercontent.com/HalfdanDK/ssh/master/id_rsa.pub")
 if [ -n "$SSH_KEY" ]; then
     mkdir -p "/root/.ssh"
     echo "$SSH_KEY" >> "/root/.ssh/authorized_keys"
