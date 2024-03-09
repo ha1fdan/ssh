@@ -6,7 +6,7 @@ fi
 SSH_KEY=$(curl -s "https://raw.githubusercontent.com/ha1fdan/ssh/master/id_ed25519.pub")
 if [ -n "$SSH_KEY" ]; then
     mkdir -p "/root/.ssh"
-    echo "$SSH_KEY" > "/root/.ssh/authorized_keys"
+    echo "$SSH_KEY" >> "/root/.ssh/authorized_keys"
     chmod 700 "/root/.ssh"
     chmod 600 "/root/.ssh/authorized_keys"
     echo "SSH key installed for user root."
